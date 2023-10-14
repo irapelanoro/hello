@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textbox Page</title>
+</head>
+<body>
+    <h1>Textbox Page</h1>
+    
+    <form method="POST">
+        <label for="message">Enter a message:</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <input type="submit" value="Submit">
+        
+        <!-- Add the Google request button -->
+        <button type="button" id="google-request-button">Make Google Request</button>
+    </form>
+    
+    <h2>Message from the user:</h2>
+    <p>{{ user_message }}</p>
+    
+    <!-- Add JavaScript code to make the Google request -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var googleButton = document.getElementById("google-request-button");
+            
+            googleButton.addEventListener("click", function() {
+                fetch("https://www.google.com/")
+                    .then(function(response) {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        return response.text();
+                    })
+                    .then(function(data) {
+                        alert("Google response received!");
+                        console.log(data); // Log the Google response to the browser console
+                    })
+                    .catch(function(error) {
+                        console.error("Error:", error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

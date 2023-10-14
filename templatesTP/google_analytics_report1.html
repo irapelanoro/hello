@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Analytics Report</title>
+    <style>
+        body {
+            background-color: #f4b400; /* Couleur orange similaire à Google Analytics */
+            color: #333; /* Couleur de texte sombre */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #fff; /* Fond blanc pour le titre */
+            color: #f4b400; /* Texte de titre orange */
+            padding: 10px;
+        }
+        .content {
+            background-color: #fff; /* Fond blanc pour le contenu */
+            padding: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Couleur verte pour le bouton */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Statut HTTP : {{ status_code }}</h1>
+    <div class="content">
+        {{ response_text }}
+    </div>
+    <form action="{{ url_for('redirect_to_analytics') }}" method="post">
+        <input type="submit" value="Rediriger vers Google Analytics">
+    </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ionenantsoa's TP Digital Traces</title>
+    <style>
+        button {
+            background-color: #f90;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-color: #f4b400;">
+    <h1 style="color: #fff;">Ionenantsoa's TP Digital Traces</h1>
+
+    <form method="POST">
+        <label for="message" style="color: #fff;">Write a message:</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <input type="submit" value="Submit" style="background-color: #f90; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">
+    </form>
+    
+    <h2 style="color: #fff;">Here is your message:</h2>
+    <p>{{ user_message }}</p>
+
+    <button style="background-color: #f90; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">
+        <a href="/make_google_request">Click request 1</a>
+    </button>
+    <button style="background-color: #f90; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">
+        <a href="/make_google_request2">Click request 2</a>
+    </button>
+
+    <button style="background-color: #f90; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">
+        <a href="/statut_code">Display statut and text code</a>
+    </button>
+
+    <form action="{{ url_for('redirect_to_analytics') }}" method="post">
+        <input type="submit" value="Redirected to Google Analytics">
+    </form>
+
+    <p style="color: #fff;"></p>
+</body>
+</html>
