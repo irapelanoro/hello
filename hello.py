@@ -1,8 +1,13 @@
-import os
+
+
 import requests
-from flask import Flask, request, render_template, jsonify,redirect, url_for
+#from flask import Flask, request, render_template, jsonify,redirect, url_for
+from flask import Flask, request, render_template, jsonify,redirect
 
 app = Flask(__name__,template_folder = 'templatesTP')
+
+
+
 '''
 @app.route('/')
 def hello_world():
@@ -17,7 +22,12 @@ def hello_world():
     </script>
     """
     return prefix_google + "    Hello World!Welcome to the Home page  "
-'''
+
+
+if __name__ == "__main__":
+    app.run()
+'''  
+
 @app.route('/')
 def hello_world():
     prefix_google = """
